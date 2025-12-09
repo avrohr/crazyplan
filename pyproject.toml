@@ -1,0 +1,42 @@
+[project]
+name = "crazyplan"
+version = "0.1.0"
+description = "Gradient-based planning to fly some drones."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "crazyflow",
+    "drone-models",
+    "drone-controllers",
+    "equinox>=0.12.2",
+    "imageio[ffmpeg]>=2.37.0",
+    "jax>=0.6.1",
+    "matplotlib>=3.10.3",
+    "minsnap-trajectories>=0.1.2",
+    "numpy>=2.2.6",
+    "optax>=0.2.4",
+    "toml>=0.10.2",
+]
+
+
+[project.optional-dependencies]
+gpu = ["jax[cuda12]"]
+
+[tool.uv.sources]
+crazyflow = { path = "./crazyflow", editable = true }
+drone-models = { path = "./crazyflow/submodules/drone-models", editable = true }
+drone-controllers = { path = "./crazyflow/submodules/drone-controllers", editable = true }
+
+[tool.pyright]
+typeCheckingMode = "basic"
+pythonVersion = "3.11"
+pythonPlatform = "Linux"
+extraPaths = [
+  "crazyflow",
+]
+
+[tool.setuptools]
+packages = ["crazyplan"]
+
+[tool.setuptools.package-dir]
+crazyplan = "crazyplan"

@@ -1,0 +1,62 @@
+[cost]
+contour_weight_min = 0.1
+contour_weight = 50.0
+lag_weight = 100.0
+action_weight = 0.01
+smooth_progress_weight = 0.01
+progress_reward = 0.1
+penalty_weight = 10000.0
+curtain_radius = 0.45
+
+[train]
+seed = 0
+track_config = "configs/tracks/drone_racing.toml"
+traj_size = 1200
+steps_per_episode = 4000
+plot_every = 400
+n_worlds = 1
+n_drones = 1
+checkpoint_dir = "outputs/checkpoints"
+plot_dir = "outputs/plots_window"
+policy_output = "outputs/final_policy.eqx"
+render_output = "outputs/final_policy.mp4"
+render_world = 0
+
+[[train.episodes]]
+window = 180
+scale_penalty = 0.2
+learning_rate = 0.001
+
+# [[train.episodes]]
+# window = 220
+# scale_penalty = 0.8
+# learning_rate = 0.0005
+
+# [[train.episodes]]
+# window = 240
+# scale_penalty = 1.0
+# learning_rate = 0.0001
+
+[train.initial_state]
+position = [-1.5, 0.75, 0.01]
+position_noise = 0.00
+
+[policy_init]
+control_min = -0.01
+control_max = 0.01
+thrust_bias = 0.5
+dtheta_min = -0.96
+dtheta_max = -0.94
+
+[policy]
+max_d_angle = 1.0
+max_d_theta = 0.0035
+min_d_theta = 0.0005
+max_thrust = 0.9
+min_thrust = 0.0
+
+[sim]
+drone_model = "cf21B_500"
+physics = "so_rpy_rotor_drag"
+control_frequency = 200
+device = "cpu"

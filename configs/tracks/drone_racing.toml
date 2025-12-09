@@ -1,0 +1,64 @@
+[track]
+margin         = 0.010  # Safety margin from the obstacle (should be at least half the drone width)
+
+[track.gate]
+length     = 0.4  # clear opening length (m)
+height     = 0.4  # clear opening height (m)
+bar_width  = 0.02  # Gate depth (m)
+bar_height = 0.17  # Gate face (m)
+
+[track.start]
+pos = [-1.5, 0.75, 0.01]
+rpy = [0.0, 0.5, 0.0]
+speed = 8.0
+
+# [[track.gates]]
+# pos = [0.0 , 0.0, 1.0]
+# rpy = [0.0, 0.0, 0.0]
+# speed = 12.0
+
+[[track.gates]]
+pos = [0.5 , 0.25, 0.7]
+rpy = [0.0, 0.0, -0.78]
+speed = 12.0
+
+[[track.gates]]
+pos = [1.05, 0.75, 1.2]
+rpy = [0.0, 0.0, 2.35]
+speed = 12.0
+
+[[track.gates]]
+pos = [-1.0, -0.25, 0.7]
+rpy = [0.0, 0.0, 3.14]
+speed = 3.0
+
+[[track.gates]]
+pos = [0.0, -0.75, 1.2]
+rpy = [0.0, 0.0, 0.0]
+speed = 12.0
+
+[track.end]
+pos = [2.000, -0.750, 1.200]
+rpy = [0.0, 0.0, 0.0]
+speed = 0.0
+
+[[track.obstacles]]
+pos = [0.0, 0.75, 0.0]
+size = [0.08, 0.08, 1.4]
+
+[[track.obstacles]]
+pos = [1.0, 0.25, 0.0]
+size = [0.08, 0.08, 1.4]
+
+[[track.obstacles]]
+pos = [-1.5, -0.25, 0.0]
+size = [0.08, 0.08, 1.4]
+
+[[track.obstacles]]
+pos = [-0.5, -0.75, 0.0]
+size = [0.08, 0.08, 1.4]
+
+
+# [[track.obstacles]]
+# pos = [0.0, 0.0, 0.0]
+# size = [1.0, 0.5, 1.0]

@@ -1,0 +1,4 @@
+[submodule "crazyflow"]
+	path = crazyflow
+	url = git@github.com:avrohr/crazyflow.git
+	branch = main
