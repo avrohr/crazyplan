@@ -6,8 +6,13 @@ Research demo highlighting the differentiable `crazyflow` simulator for Crazyfli
 
 Requirements: Python 3.11+, `uv` (recommended), and the `crazyflow` dependency (included in this repo).
 
-Install in editable mode:
+Checkoout the repo and initialize the submodules
 ```bash
+ git submodule update --init --recursive
+ ```
+Install uv and the projct in editable mode:
+```bash
+uv sync
 uv pip install -e .
 ```
 
@@ -15,7 +20,7 @@ uv pip install -e .
 
 All entrypoints live under `crazyplan/cli/`. Run them in module mode so imports resolve cleanly.
 
-- Train a policy (reads `configs/train/default.toml` by default):
+- Optimize a trajectory (reads `configs/train/default.toml` by default):
   ```bash
   uv run python -m crazyplan.cli.train --train-config configs/train/default.toml --plot --render
   ```
